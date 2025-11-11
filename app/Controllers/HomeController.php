@@ -1,7 +1,17 @@
 <?php 
 
-class HomeController{
+require_once './core/Controller.php';
+
+class HomeController extends Controller{
     public function index(){
-        echo 'Siema na stronie głównej';
+
+        $title = "Strona główna"; 
+
+        return $this->render('home', 'main', [
+            'title'=> "tytuł strony xd",
+            'nie wiem co'=> 'asdasd',
+            'kopytko' => 'aaa222'
+        ]);
+
     }
 }
