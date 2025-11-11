@@ -17,10 +17,14 @@
         </nav>
     </header>
 
+    <h3>tan tan z maina</h3>
+
     <main>
         <!-- literalny string -->
         <?= $content ?? '' ?>
     </main>
+
+    <div><?= $kopytko ?></div>
 
 </body>
 </html>

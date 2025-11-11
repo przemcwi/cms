@@ -1,15 +1,17 @@
 <?php 
 
-class HomeController{
+require_once './core/Controller.php';
+
+class HomeController extends Controller{
     public function index(){
 
         $title = "Strona główna"; 
 
-        ob_start();
-        include __DIR__ . '/../Views/home.php';
-        
-        $content = ob_get_clean();
+        return $this->render('home', 'main', [
+            'title'=> "tytuł strony xd",
+            'nie wiem co'=> 'asdasd',
+            'kopytko' => 'aaa222'
+        ]);
 
-        include __DIR__ . '/../Views/layout.php';
     }
 }

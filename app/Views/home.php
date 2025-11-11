@@ -1,1 +1,3 @@
-<h1>strona główna vol 2</h1>
+<h1> treśc z  home.php treśc z </h1>
+
+<?= $kopytko ?>
