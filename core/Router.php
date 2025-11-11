@@ -23,7 +23,8 @@ class Router{
 
         if (!$callback) {
             http_response_code(404);
-            echo "404 Not Found";
+            // echo "404 Not Found";
+            require './app/Views/404.php';
             return;
         }
 
