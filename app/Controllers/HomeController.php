@@ -1,11 +1,17 @@
 <?php 
 
 require_once './core/Controller.php';
+require_once './core/Database.php';
+require_once './app/Models/Users.php';
 
 class HomeController extends Controller{
     public function index(){
 
         $title = "Strona główna"; 
+
+        $user = new Users();
+        $result = $user->addUser();
+        d($result);
 
         return $this->render('home', 'main', [
             'title'=> "tytuł strony xd",
