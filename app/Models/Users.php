@@ -3,8 +3,7 @@
 require_once './core/Database.php';
 
 class Users{
-    protected $table = 'users';
-    protected $db;
+    private $db;
 
     public function __construct()
     {
@@ -12,11 +11,14 @@ class Users{
     }
 
     public function addUser(){
-        
-        $stmt = $this->db->query("SELECT * FROM users");
-        return $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $query = 'INSERT INTO users (username, pwd, email) VALUES (:uname, :pwd, :email)';
+        $data = [
+            ':uname' => 'ewq',
+            ':pwd' => 'fgh',
+            ':email' => 'xxx3'
+        ];
+
+        $this->db->query($query, $data);
 
     }
-
-
 }

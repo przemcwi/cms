@@ -21,4 +21,21 @@ class Database {
         $stmt->execute($params);
         return $stmt;
     }
+
+    // public function addUser(){
+    //     $stm = $this->pdo->prepare('INSERT INTO users (username, pwd, email) VALUES (:uname, :pwd, :email)');
+    //     $stm->execute([
+    //         ':uname' => 'xxx',
+    //         ':pwd' => 'xxx2',
+    //         ':email' => 'xxx3'
+    //     ]);
+    // }
+
+    // public function getUser(){
+    //     $stmt = $this->pdo->prepare('SELECT * FROM users');
+    //     $stmt->execute();
+    //     return $stmt->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_ABS, 2);
+    // }
+
+
 }
