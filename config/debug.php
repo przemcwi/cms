@@ -21,3 +21,10 @@ set_exception_handler(function ($exception) {
     echo "<hr><pre style='color:#9cf'>" . $exception->getTraceAsString() . "</pre>";
     echo "</div>";
 });
+
+
+function dump($var) {
+    echo '<pre style="background:#111;color:#0f0;padding:10px;border-radius:8px;">';
+    var_dump($var);
+    echo '</pre>';
+}
