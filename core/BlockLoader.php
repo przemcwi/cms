@@ -10,7 +10,7 @@ class BlockLoader
             return "<!-- Block view '$type' not found -->";
         }
 
-        $block = $data; // dane dla widoku bloku
+        $block = $data; 
 
         ob_start();
         include $view;

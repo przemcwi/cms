@@ -1,6 +1,7 @@
 <?php 
 
 require_once './app/Models/Pages.php';
+require_once './app/Models/Blocks.php';
 
 class PageController extends Controller{
     public function index(): void{
@@ -10,25 +11,13 @@ class PageController extends Controller{
         $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
         $pageid = $page->getPageId($uri);
 
-        d($uri, $pageid);
+        $blocks = new Blocks();
+        $b = $blocks->getBlocksByPageId($pageid);
+        d($b);
 
-        $blocks = [
-                ['type' => 'hero',
-                'data' => [
-                    'title' => 'Pierwszy xd blok',
-                    'subtitle' => 'To jest testowy hero blok'
-                ]],
-                ['type' => 'hero',
-                'data' => [
-                    'title' => 'Drugi blok',
-                    'subtitle' => 'Jeszcze jeden testowy blok'
-                ]]
-                ];
-
-
-        $this->render('page', 'main', [
+            $this->render('page', 'main', [
             'title'=> "Strona nr 1",
-            'blocks' => $blocks
+            'blocks' => $b
         ]);
 
     }
