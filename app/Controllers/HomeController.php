@@ -7,14 +7,14 @@ require_once './app/Models/Users.php';
 
 
 class HomeController extends Controller{
-    public function index(){
+    public function index(): void{
 
         $title = "Strona główna"; 
 
         $user = new Users();
         $user->addUser();
 
-        return $this->render('home', 'main', [
+        $this->render('home', 'main', [
             'title'=> "tytuł strony xd",
             'nie wiem co'=> 'asdasd',
             'kopytko' => 'aaa222'

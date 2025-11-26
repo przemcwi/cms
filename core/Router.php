@@ -20,7 +20,7 @@ class Router{
         ];
     }
 
-    public function resolve() {
+    public function resolve(): mixed {
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
@@ -32,7 +32,7 @@ class Router{
             http_response_code(404);
             // echo "404 Not Found";
             require './app/Views/404.php';
-            return;
+            return null;
         }
 
         // Sprawdza czy uytkownik jest zalogowany jak nie to przekierowuje do logowania

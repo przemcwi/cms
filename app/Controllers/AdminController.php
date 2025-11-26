@@ -4,9 +4,9 @@ require_once './core/Controller.php';
 
 class AdminController extends Controller{
 
-    public function index(){
+    public function index(): void{
 
-        return $this->render('admin', 'main');
+        $this->render('admin', 'main');
     }
 
 }
