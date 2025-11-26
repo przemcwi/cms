@@ -10,7 +10,7 @@ class Users{
         $this->db = Database::getInstance();
     }
 
-    public function addUser(){
+    public function addUser(): void{
         $query = 'INSERT INTO users (username, pwd, email) VALUES (:uname, :pwd, :email)';
         $data = [
             ':uname' => 'ewq',

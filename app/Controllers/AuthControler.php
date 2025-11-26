@@ -3,11 +3,11 @@
 require_once './core/Controller.php';
 
 class AuthControler extends Controller{
-    public function index(){
-        return $this->render('login', 'main');
+    public function index(): void{
+        $this->render('login', 'main');
     }
 
-    public function login(){
+    public function login(): void{
 
         $email = $_POST['email'] ?? '';
         $_SESSION['user_id'] = 1; // Na razie wpisujemy na sztywno ID admina
@@ -15,7 +15,7 @@ class AuthControler extends Controller{
         header('Location: /admin');
     }
 
-    public function logout() {
+    public function logout(): void {
         // Usuń wszystko z sesji
         $_SESSION = [];
         

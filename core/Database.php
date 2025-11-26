@@ -9,14 +9,14 @@ class Database {
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    public static function getInstance() {
+    public static function getInstance(): Database {
         if (self::$instance === null) {
             self::$instance = new Database();
         }
         return self::$instance;
     }
 
-    public function query($sql, $params = []) {
+    public function query(string $sql, array $params = []): PDOStatement {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
         return $stmt;

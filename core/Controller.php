@@ -2,7 +2,7 @@
 
 
 class Controller{
-    protected function render($view, $layout, $data = []) {
+    protected function render(string $view, string $layout, ?array $data = []): void {
         // bez tego nie mozna złapać zmiennych
         extract($data);
 
