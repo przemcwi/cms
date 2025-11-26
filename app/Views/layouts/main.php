@@ -41,7 +41,6 @@
         <?= $content ?? '' ?>
     </main>
 
-    <div><?= $kopytko ?></div>
 
 
     <footer class="text-center text-gray-500 text-xs py-8 mt-8">
