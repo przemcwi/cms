@@ -13,7 +13,6 @@ class PageController extends Controller{
 
         $blocks = new Blocks();
         $b = $blocks->getBlocksByPageId($pageid);
-        d($b);
 
             $this->render('page', 'main', [
             'title'=> "Strona nr 1",

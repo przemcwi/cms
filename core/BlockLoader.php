@@ -10,8 +10,8 @@ class BlockLoader
             return "<!-- Block view '$type' not found -->";
         }
 
-        $block = $data; 
-
+        $blocks = $data; 
+        
         ob_start();
         include $view;
         return ob_get_clean(); // zwraca HTML

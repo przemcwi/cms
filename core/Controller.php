@@ -3,7 +3,7 @@
 
 class Controller{
     protected function render(string $view, string $layout, ?array $data = []): void {
-        // bez tego nie mozna złapać zmiennych
+        
         extract($data);
 
         $viewPath = __DIR__ . '/../app/Views/' . $view . '.php';
