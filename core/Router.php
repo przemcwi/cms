@@ -24,15 +24,20 @@ class Router{
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
+        
+
         // Sprawdź, czy taka trasa istnieje
         $callback = $this->routes[$method]['/' . $uri]['callback'] ?? false;
         $middleware = $this->routes[$method]['/' . $uri]['middleware'] ?? null;
 
+        
+
         if (!$callback) {
-            http_response_code(404);
-            // echo "404 Not Found";
-            require './app/Views/404.php';
-            return null;
+            // http_response_code(404);
+            // // echo "404 Not Found";
+            // require './app/Views/404.php';
+            // return null;
+            $callback = ['PageController', 'index']; // tu trzeba dodać czy taka strona istnieje
         }
 
         // Sprawdza czy uytkownik jest zalogowany jak nie to przekierowuje do logowania

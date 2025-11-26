@@ -27,15 +27,6 @@
 </head>
 <body>
 
-    <header>
-        <h1>Mój CMS</h1>
-        <nav>
-            <a href="/">Strona główna</a>
-        </nav>
-    </header>
-
-    <h3>tan tan z maina</h3>
-
     <main>
         <!-- literalny string -->
         <?= $content ?? '' ?>

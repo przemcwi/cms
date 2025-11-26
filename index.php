@@ -15,6 +15,8 @@ require_once './core/Router.php';
 require_once './app/Controllers/HomeController.php';
 require_once './app/Controllers/AdminController.php';
 require_once './app/Controllers/AuthControler.php';
+require_once './app/Controllers/PageController.php';
+require './core/BlockLoader.php';
 
 $router = new Router();
 
@@ -24,5 +26,7 @@ $router->get('/admin', ['AdminController', 'index'], 'auth');
 $router->get('/login', ['AuthControler', 'index']);
 $router->post('/login', ['AuthControler', 'login']);
 $router->get('/logout', ['AuthControler', 'logout']);
+
+
 
 $router->resolve();
